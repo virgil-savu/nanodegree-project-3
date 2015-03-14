@@ -8,8 +8,8 @@ Controls: Users move the player character by using up/right/left/down arrow keys
 
 List of resources:
 
-*https://www.reddit.com/r/gamedev
+* https://www.reddit.com/r/gamedev
 
-*http://www.html5gamedevelopment.com/html5-game-tutorials/2013-12-developing-html5-games-1hr-video-presentation
+* http://www.html5gamedevelopment.com/html5-game-tutorials/2013-12-developing-html5-games-1hr-video-presentation
 
-*Stackoverflow
+* Stackoverflow
