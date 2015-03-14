@@ -1,10 +1,10 @@
 FROGGER ARCADE GAME CLONE
 
-Summary: Game is a variation of the classic Frogger arcade game.
+Summary: This game is a clone of the classic Frogger arcade game.
 
 Winning: To win you have to get the hero character to move across the  bricks towards the water without getting hit by the bugs. 
 
-Movement and Controls: Users move the player character by using up/right/left/down arrow keys on their keyboard.
+Controls: Users move the player character by using up/right/left/down arrow keys on the keyboard.
 
 List of resources:
 
