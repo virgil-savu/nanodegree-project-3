@@ -37,10 +37,13 @@ Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 }
 
+Enemy.prototype.getRandomY = function() {
+    return this.Y[Math.floor(Math.random() * this.Y.length)];
+}
 
 Enemy.prototype.getRandomSpeed = function() {
-    var minSpeed = this.speedRange[0],
-        maxSpeed = this.speedRange[1];
+    var minSpeed = this.speedValues[0],
+        maxSpeed = this.speedValues[1];
 
     return Math.floor(Math.random() * (maxSpeed - minSpeed)) + minSpeed;
 }
@@ -57,7 +60,7 @@ Player.prototype.update = function(dt) {
     this.collisionsCheck();
 }
 
-Player.prototype.checkCollisions = function() {
+Player.prototype.collisionsCheck = function() {
     if (this.y == -20) {
         // player is on water, reset
         this.reset();
