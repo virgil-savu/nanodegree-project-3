@@ -1,6 +1,6 @@
 // Enemies our player must avoid
 var Enemy = function() {
-
+    "use strict";
     this.X = [-150, 600];
     this.Y = [60, 140, 220];
     this.speedValues = [150, 600];
@@ -8,12 +8,11 @@ var Enemy = function() {
     this.sprite = "images/enemy-bug.png";
 
     this.reset();
-
 };
 
 //Resets the position of the enemy
 Enemy.prototype.reset = function() {
-
+    "use strict";
 
     var startPosition = this.X[0];
 
@@ -22,34 +21,34 @@ Enemy.prototype.reset = function() {
 
     this.speed = this.getRandomSpeed();
 
-}
+};
 
 //Updates the enemy position
 Enemy.prototype.update = function(dt) {
-
+    "use strict";
     var maxPosition = this.X[1];
     this.x += this.speed * dt;
 
     if (this.x > maxPosition) {
         this.reset();
     }
-}
+};
 
 // This is the function that is called by the game engine to render the enemy on the screen
 Enemy.prototype.render = function() {
-
+    "use strict";
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //Generates a random valid y coordinate for an enemy
 Enemy.prototype.getRandomY = function() {
-
+    "use strict";
     return this.Y[Math.floor(Math.random() * this.Y.length)];
-}
+};
 
 //Sets the speed of the enemy to a random value
 Enemy.prototype.getRandomSpeed = function() {
-
+    "use strict";
     var minSpeed = this.speedValues[0],
         maxSpeed = this.speedValues[1];
 
@@ -58,7 +57,7 @@ Enemy.prototype.getRandomSpeed = function() {
 
 
 var Player = function() {
-
+    "use strict";
     this.X = [-2, 402];
     this.Y = [-20, 380];
     this.sprite = "images/char-boy.png";
@@ -67,11 +66,13 @@ var Player = function() {
 
 //Check player-enemy colisions
 Player.prototype.update = function(dt) {
+    "use strict";
     this.collisionsCheck();
-}
+};
 
 //Check to see if the player "collides with" (occupies the same space) as the enemy
 Player.prototype.collisionsCheck = function() {
+    "use strict";
     if (this.y == -20) {
         // player is on water, reset
         this.reset();
@@ -89,21 +90,24 @@ Player.prototype.collisionsCheck = function() {
             }
         });
     }
-}
+};
 
 //This function resets the player position
 Player.prototype.reset = function() {
+    "use strict";
     this.x = 200;
     this.y = 380;
-}
+};
 
 // This is the function that is called by the game engine to render the enemy on the screen
 Player.prototype.render = function() {
+    "use strict";
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 //This is the function that moves the player based on the key pressed
 Player.prototype.handleInput = function(key) {
+    "use strict";
     if (key === "left") {
         this.x -= (this.x - 101 < this.X[0]) ? 0 : 101;
     } else if (key === "right") {
